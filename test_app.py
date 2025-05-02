@@ -175,15 +175,15 @@ if st.button("조회하기"):
                 col1, col2, col3, col4 = st.columns(4)
                 col1.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold;'>{int(month_input)}월 등급</div><div style= 'text-align : center; font-size: 80px; font-weight: bold; color: {grade_text_color}; text-shadow: 2px 2px 3px rgba(0,0,0,0.2); margin-top: 10px; line-height: 1;'>{this_grade}</div>", unsafe_allow_html=True)
                 col2.markdown(f"""
-                <div style='font-size: 14px; color: gray; margin-bottom: 10px;'>달성률</div>
+                <div style='font-size: 14px; color: gray; margin-top: 10px;'>달성률</div>
                 <div style='font-size: 26px; font-weight: bold;'>{round(this_percent * 100)}%</div>
                 """, unsafe_allow_html=True)
                 col3.markdown(f"""
-                    <div style='font-size: 14px; color: gray; margin-bottom: 15px;'>공회전</div>
+                    <div style='font-size: 14px; color: gray; margin-top: 15px;'>공회전</div>
                     <div style='font-size: 26px; font-weight: bold;'>{round(this_idle * 100)}%</div>
                 """, unsafe_allow_html=True)
                 col4.markdown(f"""
-                    <div style='font-size: 14px; color: gray; margin-bottom: 20px;'>급감속</div>
+                    <div style='font-size: 14px; color: gray; margin-top: 20px;'>급감속</div>
                     <div style='font-size: 26px; font-weight: bold;'>{round(this_break, 2)}</div>
                 """, unsafe_allow_html=True)
                 # col2.metric("달성률", f"{round(row['이번달달성율'] * 100)}%")
