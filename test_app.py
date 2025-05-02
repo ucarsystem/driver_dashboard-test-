@@ -45,7 +45,7 @@ cert_25_all = load_excel(medal_filepath, "25년 명단")
 
 
 # Streamlit UI 구성
-st.title("🚍 운전자별대시보드")
+st.title("🚍 운전자별 대시보드")
 company_input = st.selectbox("운수사를 입력하세요", options=company_list, index=company_list.index(st.session_state.get("company_input", company_list[0])) if "company_input" in st.session_state else None)
 
 user_id_input = st.text_input("운전자 ID를 입력하세요", value=st.session_state.get("user_id_input", ""))
@@ -160,7 +160,7 @@ if st.button("조회하기"):
                 </div>
                 """, unsafe_allow_html=True)
 
-                # ✅ 2. 기존 요약 (대표 차량, 노선, 등급, 주요 지표)
+                #  2. 기존 요약 (대표 차량, 노선, 등급, 주요 지표)
                 st.markdown(f"""
                 <div style='display: flex; align-items: center;'>
                     <img src='https://img.icons8.com/color/48/bus.png' style='margin-right: 10px;'>
