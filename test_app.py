@@ -409,20 +409,20 @@ if st.button("조회하기"):
                     prev = prev_row.iloc[0]
                     curr = curr_row.iloc[0]
 
-                    prev_vals = [
-                    prev['가중달성율'] * 100,
-                    prev['웜업비율(%)'],
-                    prev['공회전비율(%)'],
-                    prev['탄력운전비율(%)'],
-                    prev['급감속(회)/100km']
-                    ]
-
                     curr_vals = [
-                    curr['가중달성율'] * 100,
-                    curr['웜업비율(%)'],
-                    curr['공회전비율(%)'],
-                    curr['탄력운전비율(%)'],
-                    curr['급감속(회)/100km']
+                    this_percent * 100,
+                    this_warm*100,
+                    this_idle*100,
+                    row['이번달탄력운전비율(%)']*100,
+                    this_break
+                    ]
+                    #전월
+                    prev_vals = [
+                    last_percent * 100,
+                    last_warm*100,
+                    last_idle*100,
+                    row['전월탄력운전비율(%)']*100,
+                    last_break
                     ]
 
                     #변화 계산 및 방향 아이콘 추가
