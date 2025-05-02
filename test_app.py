@@ -45,7 +45,7 @@ cert_25_all = load_excel(medal_filepath, "25년 명단")
 
 
 # Streamlit UI 구성
-st.title("🚍 운전자별 대시보드")
+st.title("🚍 운전자별  대시보드")
 company_input = st.selectbox("운수사를 입력하세요", options=company_list, index=company_list.index(st.session_state.get("company_input", company_list[0])) if "company_input" in st.session_state else None)
 
 user_id_input = st.text_input("운전자 ID를 입력하세요", value=st.session_state.get("user_id_input", ""))
