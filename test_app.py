@@ -37,7 +37,6 @@ def load_excel(path, sheetname):
 df_company = pd.read_excel(company_file, sheet_name="Sheet1", header=None) if os.path.exists(company_file) else pd.DataFrame()
 company_list = df_company[0].dropna().tolist() if not df_company.empty else []
 df_code = pd.read_excel(company_file, sheet_name="code") if os.path.exists(company_file) else pd.DataFrame()
-# file_path = os.path.join(file_dir, "인천 개인별 대시보드_25년04월.xlsx")
 
 #24년 인증제
 medal_filepath = os.path.join(file_dir, "인증제.xlsx")
@@ -58,7 +57,7 @@ user_id_input = st.text_input("운전자 ID를 입력하세요", value=st.sessio
 user_name_input = st.text_input("운전자 이름을 입력하세요", value=st.session_state.get("user_name_input", ""))
 
 # ID목록 체크
-if st.button("1️⃣ 운전자 정보 확인"):
+if st.button("조회하기"):
     if company_input and user_id_input and user_name_input:
         df_id_list = load_excel(id_check_file, "ID목록") if os.path.exists(id_check_file) else pd.DataFrame()
 
@@ -73,15 +72,13 @@ if st.button("1️⃣ 운전자 정보 확인"):
 
             input_yyyymm = "2504"
             month_input = 4
-            file_name = "인천 개인별 대시보드_25년04월.xlsx"
-            file_path = os.path.join(file_dir, file_name)
+            file_path = os.path.join(file_dir, "인천 개인별 대시보드_25년04월.xlsx")
 
             df = load_excel(file_path, "매크로(운전자리스트)")
             df_vehicle = load_excel(file_path, "차량+운전자별")
             df_monthly = load_excel(file_path, "운전자별")
             df_daily = load_excel(file_path, "일별)차량+운전자")
-            # df_cert_24 = load_excel(file_path, "24년 명단")
-            # df_cert_25 = load_excel(file_path, "25년 후보자")
+
 
             # 조건 필터링
             filtered = df[
