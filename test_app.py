@@ -253,8 +253,6 @@ if st.button("조회하기"):
                 </div>
                 """, unsafe_allow_html=True)
 
-                """, unsafe_allow_html=True)
-
                 # 3. 📅 일별 달성률 및 등급 표시
                 st.markdown("---")
                 st.subheader("📅 일별 등급 스탬프")
