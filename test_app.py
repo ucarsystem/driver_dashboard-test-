@@ -226,21 +226,34 @@ if st.button("조회하기"):
 
                 # 표시(순위)
                 st.markdown(f"""
-                <div style='background-color: #f9f9f9; padding: 15px; border-radius: 8px; line-height: 1.8;'>
-
-                <p style='font-size: 18px; margin: 5px 0;'>
-                    <strong>🚩 인천시 전체 순위</strong>: 
-                    <span style='font-size: 20px; font-weight: bold; color: orange;'>{incheon_rank}등</span> / 총 {incheon_total}명 → 
-                    <span style='font-size: 20px; font-weight: bold; color: orange;'>상위 {incheon_percent:.1f}%</span>
-                </p>
-
-                <p style='font-size: 18px; margin: 5px 0;'>
-                    <strong>🧑‍💼 {company_input} 내 순위</strong>: 
-                    <span style='font-size: 20px; font-weight: bold; color: orange;'>{company_rank}등</span> / 총 {company_total}명 → 
-                    <span style='font-size: 20px; font-weight: bold; color: orange;'>상위 {company_percent:.1f}%</span>
-                </p>
-
+                <style>
+                .rank-box{{
+                    background-color: #f9f9f9; 
+                    padding: 15px; 
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 20px 
+                }}
+                .rank-item {{
+                    flex: 1 1 250px;
+                    min-width: 200px;
+                    font-size: 16px;
+                }}
+                .rank-item span {{
+                    font-weight: bold;
+                    font-size: 20px;
+                    color: orange;
+                }}
+                </style>
+                            
+                <div class="rank-box">
+                    <div class="rank-item">🚩 인천시 전체 순위: <span>{incheon_rank}등</span> / 총 {incheon_total}명 → <span>상위 {incheon_percent:.1f}%</span></div>
+                    <div class="rank-item">🧑‍💼 {company_input} 내 순위: <span>{company_rank}등</span> / 총 {company_total}명 → <span>상위 {company_percent:.1f}%</span></div>
                 </div>
+                """, unsafe_allow_html=True)
+
                 """, unsafe_allow_html=True)
 
                 # 3. 📅 일별 달성률 및 등급 표시
@@ -586,7 +599,7 @@ if st.button("조회하기"):
 
                 st.markdown("<br>".join(feedback_parts), unsafe_allow_html=True)
             else:
-                st.warning("해당 운전자의 정보가 없습니다. 관리자에 문의해주세요.")
+                st.warning("4월 해당 운전자의 정보가 없습니다. 관리자에 문의해주세요.")
     else:
         st.warning("운수사, 운전자 ID, 운전자 이름을 확인해주세요.")
 else:
