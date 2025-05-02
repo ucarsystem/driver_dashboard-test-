@@ -173,7 +173,7 @@ if st.button("조회하기"):
 
                 st.markdown(" ")
                 col1, col2, col3, col4 = st.columns(4)
-                col1.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold;'>{int(month_input)}월 등급</div><div style= 'text-align : center; font-size: 100px; font-weight: bold; color: {grade_text_color}; text-shadow: 2px 2px 3px rgba(0,0,0,0.2); line-height: 1;'>{this_grade}</div>", unsafe_allow_html=True)
+                col1.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold;'>{int(month_input)}월 등급</div><div style= 'text-align : center; font-size: 100px; font-weight: bold; color: {grade_text_color}; text-shadow: 5px 5px 6px rgba(0,0,0,0.2); line-height: 1;'>{this_grade}</div>", unsafe_allow_html=True)
                 col2.markdown(f"""
                 <div style='font-size: 14px; color: gray; margin-top: 60px;'>달성률</div>
                 <div style='font-size: 26px; font-weight: bold;'>{round(this_percent * 100)}%</div>
