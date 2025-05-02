@@ -150,7 +150,6 @@ if st.button("조회하기"):
 
                 st.markdown(f"""
                 <div style='
-                    background-color: #f9f9f9; 
                     padding: 12px; 
                     margin-bottom: 20px; 
                     border-left: 6px solid #FFA500; 
@@ -223,12 +222,12 @@ if st.button("조회하기"):
                     company_rank = "-"
                     company_total = len(df_company_driver)
                     company_percent = 0.0  # 또는 표시하지 않도록 설정
+                # background-color: #f9f9f9; 
 
                 # 표시(순위)
                 st.markdown(f"""
                 <style>
                 .rank-box{{
-                    background-color: #f9f9f9; 
                     padding: 15px; 
                     border-radius: 8px;
                     display: flex;
