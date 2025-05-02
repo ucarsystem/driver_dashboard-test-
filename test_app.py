@@ -113,6 +113,7 @@ if st.button("조회하기"):
                 this_break = row['이번달급감속(회)/100km']
                 this_line = row['주운행노선']
                 this_bus = row['주운행차량']
+                this_elastic = row['이번달탄력운전비율(%)']
 
                 #전월
                 last_grade = row['전월등급']
@@ -172,7 +173,7 @@ if st.button("조회하기"):
                 """, unsafe_allow_html=True)
 
                 st.markdown(" ")
-                col1, col2, col3, col4 = st.columns(4)
+                col1, col2, col3, col4, col5 = st.columns(5)
                 col1.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold;'>{int(month_input)}월 등급</div><div style= 'text-align : center; font-size: 100px; font-weight: bold; color: {grade_text_color}; text-shadow: 5px 5px 6px rgba(0,0,0,0.2); line-height: 1;'>{this_grade}</div>", unsafe_allow_html=True)
                 col2.markdown(f"""
                 <div style='font-size: 14px; color: gray; margin-top: 60px;'>달성률</div>
@@ -183,6 +184,10 @@ if st.button("조회하기"):
                     <div style='font-size: 26px; font-weight: bold;'>{round(this_idle * 100)}%</div>
                 """, unsafe_allow_html=True)
                 col4.markdown(f"""
+                    <div style='font-size: 14px; color: gray; margin-top: 60px;'>탄력운전비율</div>
+                    <div style='font-size: 26px; font-weight: bold;'>{round(this_elastic * 100)}%</div>
+                """, unsafe_allow_html=True)
+                col5.markdown(f"""
                     <div style='font-size: 14px; color: gray; margin-top: 60px;'>급감속</div>
                     <div style='font-size: 26px; font-weight: bold;'>{round(this_break, 2)}</div>
                 """, unsafe_allow_html=True)
