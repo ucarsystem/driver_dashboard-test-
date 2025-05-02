@@ -188,7 +188,7 @@ if st.button("조회하기"):
                     <div style='font-size: 26px; font-weight: bold;'>{round(this_elastic * 100)}%</div>
                 """, unsafe_allow_html=True)
                 col5.markdown(f"""
-                    <div style='font-size: 14px; color: gray; margin-top: 60px;'>급감속</div>
+                    <div style='font-size: 14px; color: gray; margin-top: 60px;'>급감속(회/100km당)</div>
                     <div style='font-size: 26px; font-weight: bold;'>{round(this_break, 2)}</div>
                 """, unsafe_allow_html=True)
                 # col2.metric("달성률", f"{round(row['이번달달성율'] * 100)}%")
@@ -585,8 +585,8 @@ if st.button("조회하기"):
                     feedback_parts.append("✅ 공회전 관리가 잘 되고 있습니다.")
 
                 st.markdown("<br>".join(feedback_parts), unsafe_allow_html=True)
-        else:
-            st.warning("해당 운전자의 정보가 없습니다. 관리자에 문의해주세요.")
+            else:
+                st.warning("해당 운전자의 정보가 없습니다. 관리자에 문의해주세요.")
     else:
         st.warning("운수사, 운전자 ID, 운전자 이름을 확인해주세요.")
 else:
