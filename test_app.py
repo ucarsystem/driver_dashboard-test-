@@ -141,11 +141,11 @@ if st.button("조회하기"):
                 if this_grade in ["S", "A"]:
                     summary_msg = f"🎉 {int(month_input)}월 <b>{this_grade}</b>등급 달성! 안정적인 운전 감사합니다."
                 elif this_break > 20:
-                    summary_msg = f"⚠️ {int(month_input)}월 급감속 <b>{this_break:.1f}</b>회! 탕별 급감속 1회 목표로 <b>{grade_target}등급</b>까지 도전해보세요!"
+                    summary_msg = f"⚠️ {int(month_input)}월 급감속 <b>{this_break:.1f}</b>회! 탕별 급감속 1회 목표로  <b>{grade_target}등급</b>까지 도전해보세요!"
                 elif this_idle > ave_idle:
-                    summary_msg = f"⚠️ 공회전율이 다소 높습니다. 시동 관리를 통해 <b>{grade_target}등급</b> 도전해보세요!"
+                    summary_msg = f"⚠️ 공회전율이 다소 높습니다. 시동 관리를 통해  <b>{grade_target}등급</b> 도전해보세요!"
                 else:
-                    summary_msg = f"📌 {int(month_input)}월 <b>{this_grade}</b>등급! 조금만 더 노력하면 <b>{grade_target}</b>도 가능합니다."
+                    summary_msg = f"📌 {int(month_input)}월 <b>{this_grade}</b>등급!  조금만 더 노력하면 <b>{grade_target}</b>등급 달성 가능합니다."
 
                 st.markdown(f"""
                 <div style='
@@ -171,8 +171,9 @@ if st.button("조회하기"):
                 </div>
                 """, unsafe_allow_html=True)
 
+                st.markdown(" ")
                 col1, col2, col3, col4 = st.columns(4)
-                col1.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold;'>{int(month_input)}월 등급</div><div style= 'text-align : center; font-size: 80px; font-weight: bold; color: {grade_text_color}; text-shadow: 2px 2px 3px rgba(0,0,0,0.2); margin-top: 10px;'>{this_grade}</div>", unsafe_allow_html=True)
+                col1.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 5px'>{int(month_input)}월 등급</div><div style= 'text-align : center; font-size: 80px; font-weight: bold; color: {grade_text_color}; text-shadow: 2px 2px 3px rgba(0,0,0,0.2); margin-top: 10px; line-height: 1;'>{this_grade}</div>", unsafe_allow_html=True)
                 col2.metric("달성률", f"{round(row['이번달달성율'] * 100)}%")
                 col3.metric("공회전", f"{round(this_idle * 100)}%")
                 col4.metric("급감속", f"{round(this_break, 2)}")
@@ -532,9 +533,9 @@ if st.button("조회하기"):
                 <br>
                 <p style='font-size: 22px; font-style: italic;'>
                 <b>{next_month}</b>월에는, <b>공회전</b>을 줄여봅시다.<br>
-                이번달 공회전 <b>{round(this_idle * 100)}%</b> 공회전은 <b>5분 미만!</b><br>
+                이번달 공회전 <b>{round(this_idle * 100)}%</b>, 공회전은 <b>5분 미만!</b><br>
                 이것만 개선해도 연비 5% 개선, 
-                <span style='color: green; font-weight: bold;'>{grade_target}등급</span>까지 도달 목표!!
+                <span style='color: green; font-weight: bold;'> {grade_target}등급</span>까지 도달 목표!!
                 </p>"""
 
                 #급감속이 20보다 작으면 공회전관리멘트 보여주기
